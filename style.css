@@ -1,6 +1,209 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
 
 @import "https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap";
+
+
+
+/* Define the light mode styles (default) */
+:root {
+  --background-color: white;
+  --text-color: black;
+  --button-bg: #007BFF;
+  --button-text: white;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+  margin-bottom: 1px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  --background: whitesmoke;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--background);
+  transition: 0.5s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 50%;
+  left: 10%;
+  bottom: 15%;
+  box-shadow: inset 15px -4px 0px 15px #fff000;
+  transition: 0.5s;
+}
+
+/* When checked, change background */
+input:checked + .slider {
+  background-color: #373638;
+}
+
+input:checked + .slider:before {
+  transform: translateX(100%);
+  box-shadow: inset 8px -4px 0px 0px #fff000;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+  transition: background-color 0.4s, color 0.1s;
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+button {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Positioning the toggle button in the top right corner */
+.toggle-btn {
+  position: absolute;
+  top: 200px; /* Adjust the distance from the top */
+  right: 20px; /* Adjust the distance from the right */
+  z-index: 1000; /* Ensure it stays on top of other content */
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  --background-color: #121212;
+  --text-color: white;
+  --button-bg: #555;
+  --button-text: #f1f1f1;
+}
+
+
+/* Dark mode styles for the #hero section */
+body.dark-mode #hero {
+  opacity: 0.7;  /* Increase opacity to dim the background */
+}
+
+
+
+.hero.container div {
+  position: relative; /* Ensure it stays above the background */
+  z-index: 2; /* Make sure it stays on top of the parent */
+  opacity: 1; /* Prevent opacity inheritance */
+}
+
+/* Optional styles for child elements */
+.hero.container div h1,
+.hero.container div a {
+  color: inherit; /* Maintain text visibility */
+}
+
+.section-title,
+.abt,
+.cta {
+    color: black; /* Default color before toggle */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+/* Change color to white in dark mode */
+body.dark-mode .section-title,
+body.dark-mode .abt {
+    color: white; /* Turn white in dark mode */
+}
+
+/* Change color to white in dark mode */
+body.dark-mode .cta {
+  color: white; /* Turn white in dark mode */
+}
+
+/* Default style for .contact-item */
+.contact-item {
+  background-color: white; /* Default background */
+  color: white; /* Default text color */
+  box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.3); /* Subtle white shadow */
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+/* Style for .contact-item in dark mode */
+body.dark-mode .contact-item {
+  background-color: whitesmoke; /* Background turns white */
+  color: black; /* Text turns black */
+  opacity: 0.8;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8); /* Bright white shadow */
+}
+
+
+/* Default styles for .cta links */
+.cta {
+  display: inline-block;
+  padding: 10px 30px;
+  color: black; /* Default color for light mode */
+  background-color: transparent;
+  border: 2px solid crimson;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  margin-top: 30px;
+  transition: 0.3s ease;
+  transition-property: background-color, color, border-color;
+}
+
+/* Hover effect for .cta */
+.cta:hover {
+  color: white;
+  background-color: crimson;
+}
+
+/* Dark mode styles for .cta links */
+body.dark-mode .cta {
+  color: white; /* Text turns white */
+  border-color: white; /* Border turns white */
+}
+
+/* Hover effect for .cta in dark mode */
+body.dark-mode .cta:hover {
+  color: black; /* Text changes to black */
+  background-color: white; /* Background turns white */
+}
+
+/* Default styles for contact-info and contact-item */
+.contact-info h1,
+.contact-info h2 {
+    color: black; /* Default color for light mode */
+    transition: color 0.3s ease; /* Smooth transition */
+}
+
+/* Dark mode styles for contact-info */
+body.dark-mode .contact-info h1,
+body.dark-mode .contact-info h2 {
+    color: black; /* Text turns white in dark mode */
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -46,7 +249,7 @@ p {
 .section-title span {
   color: crimson;
 }
-
+/* 
 .cta {
   display: inline-block;
   padding: 10px 30px;
@@ -63,7 +266,7 @@ p {
 .cta:hover {
   color: white;
   background-color: crimson;
-}
+} */
 .brand h1 {
   font-size: 3rem;
   text-transform: uppercase;
@@ -218,6 +421,10 @@ p {
   background-color: black;
   opacity: 0.1;
   z-index: -1;
+  background-image: url(./images/Img-1.jpg);
+    background-size: cover;
+    background-position: top center;
+    transition: opacity 0.3s ease;
 }
 #hero .hero {
   max-width: 1200px;

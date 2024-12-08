@@ -9,6 +9,15 @@
   </head>
 
   <body>
+    <!-- toggle -->
+
+    <script>
+      function toggleDarkMode() {
+        console.log("Dark mode toggle clicked");
+        document.body.classList.toggle("dark-mode");
+      }
+    </script>
+
     <!-- Header -->
     <section id="header">
       <div class="header container">
@@ -30,6 +39,12 @@
               <li><a href="#projects" data-after="Projects">Projects</a></li>
               <li><a href="#about" data-after="About">About</a></li>
               <li><a href="#contact" data-after="Contact">Contact</a></li>
+              <li>
+                <label class="switch">
+                  <input type="checkbox" onclick="toggleDarkMode()" />
+                  <span class="slider"></span>
+                </label>
+              </li>
             </ul>
           </div>
         </div>
@@ -253,7 +268,7 @@
             <div class="contact-info">
               <h1>Email</h1>
               <h2>
-                <a href="mailto: anandkkanti@gmail.com" style="color: black"
+                <a href="mailto: anandkkanti@gmail.com"
                   >anandkanti113@gmail.com</a
                 >
               </h2>
