@@ -405,7 +405,7 @@ p {
 
 /* Hero Section */
 #hero {
-  background-image: url(./images/Img-1.PNG);
+  background-image: url(./images/Img-4.jpg);
   background-size: cover;
   background-position: top center;
   position: relative;
@@ -421,7 +421,7 @@ p {
   background-color: black;
   opacity: 0.1;
   z-index: -1;
-  background-image: url(./images/Img-1.PNG);
+  background-image: url(./images/Img-4.jpg);
     background-size: cover;
     background-position: top center;
     transition: opacity 0.3s ease;
